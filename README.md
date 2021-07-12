@@ -10,3 +10,4 @@
 
 For this assignment, I have completed the HTML and CSS, have been able to write some Javascript to insert the time and have connected to the API icons. I have had trouble connecting to the API to access the weather data and have watched multiple videos to attempt to do this with no luck. I am going to continue researching and will come back to this when I have more information. 
 
+![image](https://user-images.githubusercontent.com/82196946/125250528-b2f56600-e339-11eb-81f1-76c5affb9204.png)
