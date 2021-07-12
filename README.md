@@ -6,3 +6,7 @@
 - When the UV index is viewed the user is presented with a colour that indicates whether the conditions are favourable, moderaete or severe
 - The future weather conditions will be shown with a 5-day forecast that displays the date, an icon, the temperature, the wind speed and the humidity 
 - The search history contains working links back to all previous searches  
+
+
+For this assignment, I have completed the HTML and CSS, have been able to write some Javascript to insert the time and have connected to the API icons. I have had trouble connecting to the API to access the weather data and have watched multiple videos to attempt to do this with no luck. I am going to continue researching and will come back to this when I have more information. 
+
