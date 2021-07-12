@@ -1,0 +1,199 @@
+/* ---------- GLOBAL STYLES ---------- */
+:root {
+    --white: rgba(255, 255, 255, 1);
+    --darkteal: rgb(42, 87, 105);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--white) url("../images/page-background.jpeg") no-repeat right top;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    font-family: raleway, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* ---------- HEADER STYLES ---------- */
+
+header {
+    height: 160px;
+    background: var(--white) url("../images/header-background.png") no-repeat right top; 
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+h1 {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    font-weight: 700;
+    font-size: 3em;
+    color: var(--darkteal);
+}
+
+/* ---------- SEARCH BOX ---------- */
+
+.search-container {
+    font-size: 25px;
+}
+
+.search-container h2 {
+    padding: 25px 50px 10px 0px;
+}
+
+.search-query {
+    background-color: rgba(24, 24, 27, 0.7);
+    font-size: 15px;
+    border: none;
+    padding: 10px 20px;
+}
+
+.btn {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 15px;
+    background: var(--darkteal);
+    border-radius: 50px;
+    text-align: center;
+}
+
+::placeholder {
+    color: var(--white);
+}
+
+
+/* ---------- CURRENT WEATHER SECTION ---------- */
+
+.page-container {
+    padding: 20px 70px;
+}
+
+.current-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.date-container .time {
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.date-container #am-pm {
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.date-container .date {
+    font-size: 30px;
+}
+
+.place-container {
+    text-align: end;
+}
+
+.place-container .time-zone {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.place-container .city {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.current-info .others {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    background-color: rgba(24, 24, 27, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.current-info .others .weather-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ---------- FUTURE FORECAST SECTION ---------- */
+
+.future-forecast {
+    color: var(--white);
+    background: rgba(24, 24, 27, 0.8);
+    padding: 25px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-forecast .today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-forecast .today .day {
+    padding: 5px 15px;
+    background: var(--darkteal);
+    border-radius: 50px;
+    text-align: center
+}
+
+.future-forecast .today .temp {
+    font-size: 20px;
+    padding: 15px;
+}
+
+.future-forecast .weather-forecast {
+    display: flex;
+}
+
+.weather-forecast .weather-forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.weather-forecast .weather-forecast-item .day {
+    padding: 5px 15px;
+    background: var(--darkteal);
+    border-radius: 50px;
+    text-align: center;
+}
+
+.weather-forecast .weather-forecast-item .temp {
+    font-weight: 100;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+@media only screen and (max-width:730px) {
+    .future-forecast {
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+}
+
+
+

@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <title>Weather Dashboard</title>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![end if]-->
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="weather, information, city, travel">
+    <meta name="description" content="Check the current and future weather in your chosen city">
+    <meta name="author" content="Stephanie Melanofridis">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/aod0yls.css">
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/fetch.js" defer></script>
+    <script src="./assets/js/ui.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+</head>
+
+<body>
+
+    <!-- ********** PAGE HEADER ********** -->
+    <header>
+
+        <h1>Weather Dashboard</h1>
+
+        <section class="search-container">
+            <h2>Search for a city:</h2>
+            <form id="search-box" class="search-box">
+                <input id="search-query" class="search-query" aria-label="type city here" type="text"
+                    class="searchBox_input form-control" placeholder="Enter a city here" required>
+                <button type="submit" class="btn searchBox_button">Search</button>
+            </form>
+        </section>
+
+    </header>
+
+    <main>
+        <div class="page-container">
+            <!-- ********** CURRENT WEATHER SECTION ********** -->
+            <article class="current-info">
+
+                <section class="date-container">
+
+                    <section id="time" class="time">
+                        6 <span id="am-pm">PM</span>
+                    </section>
+
+                    <section id="date" class="date">
+                        Saturday, 10 July
+                    </section>
+
+                    <section id="current-weather-items" class="others">
+                        <section class="weather-item">
+                            <p>Weather Item 1</p>
+                            <p>Value</p>
+                        </section>
+
+                        <section class="weather-item">
+                            <p>Weather Item 2</p>
+                            <p>Value</p>
+                        </section>
+
+                        <section class="weather-item">
+                            <p>Weather Item 3</p>
+                            <p>Value</p>
+                        </section>
+
+                        <section class="weather-item">
+                            <p>Weather Item 4</p>
+                            <p>Value</p>
+                        </section>
+                    </section>
+
+                    <section class="city-container">
+                        <section class="time-zone">
+                            Austalia?
+                        </section>
+
+                        <section id="city" class="city">
+                            SYDNEY
+                        </section>
+                    </section>
+                </section>
+
+            </article>
+        </div>
+        <!-- ********** FUTURE FORECAST SECTION ********** -->
+        <article class="future-forecast">
+            <section id="current-temp" class="today">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="weather-icon">
+                <section class="other">
+                    <p class="day">Saturday</p>
+                    <p class="temp">Day 23&#176; C</p>
+                    <p class="temp">Night 15&#176; C</p>
+                </section>
+            </section>
+
+            <section id="weather-forecast" class="weather-forecast">
+                <section class="weather-forecast-item">
+                    <p class="day">Sunday</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="weather-icon">
+                    <p class="temp">Day 23&#176; C</p>
+                    <p class="temp">Night 15&#176; C</p>
+                </section>
+
+                <section class="weather-forecast-item">
+                    <p class="day">Monday</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="weather-icon">
+                    <p class="temp">Day 23&#176; C</p>
+                    <p class="temp">Night 15&#176; C</p>
+                </section>
+
+                <section class="weather-forecast-item">
+                    <p class="day">Tuesday</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt=" Weather Icon" class="weather-icon">
+                    <p class="temp">Day 23&#176; C</p>
+                    <p class="temp">Night 15&#176; C</p>
+                </section>
+
+                <section class="weather-forecast-item">
+                    <p class="day">Wednesday</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="weather-icon">
+                    <p class="temp">Day 23&#176; C</p>
+                    <p class="temp">Night 15&#176; C</p>
+                </section>
+
+                <section class="weather-forecast-item">
+                    <p class="day">Thursday</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" class="weather-icon">
+                    <p class="temp">Day 23&#176; C</p>
+                    <p class="temp">Night 15&#176; C</p>
+                </section>
+            </section>
+
+        </article>
+    </main>
+</body>
+
+</html>
