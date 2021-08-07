@@ -12,12 +12,7 @@
 
 body {
     background: var(--white) url("../images/page-background.jpeg") no-repeat right top;
-    background-size: cover;
-    overflow: hidden;
-    height: 100vh;
-    font-family: raleway, sans-serif;
-    font-weight: 300;
-    font-style: normal;
+    background-size: cover;   
 }
 
 /* ---------- HEADER STYLES ---------- */
@@ -35,19 +30,18 @@ h1 {
     position: relative;
     top: 50px;
     left: 50px;
+    font-family: expressway, sans-serif;
     font-weight: 700;
-    font-size: 3em;
+    font-style: normal;
+    font-size: 4em;
     color: var(--darkteal);
 }
+
 
 /* ---------- SEARCH BOX ---------- */
 
 .search-container {
     font-size: 25px;
-}
-
-.search-container h2 {
-    padding: 25px 50px 10px 0px;
 }
 
 .search-query {
@@ -57,35 +51,25 @@ h1 {
     padding: 10px 20px;
 }
 
-.btn {
-    color: var(--white);
-    font-weight: bold;
-    font-size: 15px;
-    padding: 5px 15px;
-    background: var(--darkteal);
-    border-radius: 50px;
-    text-align: center;
-}
-
 ::placeholder {
     color: var(--white);
 }
 
+.card-header {
+    font-family: fino-sans, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 /* ---------- CURRENT WEATHER SECTION ---------- */
-
-.page-container {
-    padding: 20px 70px;
+.date-container {
+    font-family: dunbar-tall, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
-
-.current-info {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .date-container .time {
-    font-size: 70px;
+    font-size: 6em;
     font-weight: 100;
 }
 
@@ -122,10 +106,6 @@ h1 {
     margin: 10px 0;
 }
 
-.current-info .others .weather-item {
-    display: flex;
-    justify-content: space-between;
-}
 
 /* ---------- FUTURE FORECAST SECTION ---------- */
 
@@ -133,48 +113,26 @@ h1 {
     color: var(--white);
     background: rgba(24, 24, 27, 0.8);
     padding: 25px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.future-forecast .today {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.future-forecast .today .day {
-    padding: 5px 15px;
-    background: var(--darkteal);
-    border-radius: 50px;
-    text-align: center
-}
-
-.future-forecast .today .temp {
-    font-size: 20px;
-    padding: 15px;
+    position: absolute;
+    top: 500px;
+    right: 360px;
+    border-radius: 10px;
 }
 
 .future-forecast .weather-forecast {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .weather-forecast .weather-forecast-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 0 10px;
     border: 1px solid var(--white);
     border-radius: 10px;
     padding: 5px;
 }
 
-.weather-forecast .weather-forecast-item .day {
+.weather-forecast .weather-forecast-item .date {
     padding: 5px 15px;
     background: var(--darkteal);
     border-radius: 50px;
@@ -184,16 +142,3 @@ h1 {
 .weather-forecast .weather-forecast-item .temp {
     font-weight: 100;
 }
-
-/* ---------- MEDIA QUERIES ---------- */
-
-@media only screen and (max-width:730px) {
-    .future-forecast {
-        justify-content: start;
-        align-items: none;
-        overflow-y: scroll;
-    }
-}
-
-
-
