@@ -189,7 +189,7 @@ function displayCards(weather, location) {
     let futureHumidity = weather.list[i].main.humidity;
 
     createP.append("<h2 class='header-result'>" + date + "</h2>");
-    createP.append("<img class='icon' src='http://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>");
+    createP.append("<img class='icon' src='https://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>");
     createP.append("<p class='temp font-weight-bold'>Temp: " + futureTemp + " °C</p>");
     createP.append("<p class='wind font-weight-bold'>Wind Speed: " + futureWind + " MPH</p>");
     createP.append("<p class='humidity font-weight-bold'>Humidity: " + futureHumidity + " %</p>");
