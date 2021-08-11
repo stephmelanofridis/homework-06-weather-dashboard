@@ -1,14 +1,15 @@
 const userFormEl = $(".search-box");
 const cityInput = $("#search-query");
 const submitBtn = $(".submit");
-const prevContainer = $(".prevsearch-container")
+const prevContainer = $(".prevsearch-container");
+const futureContainer = $(".future-forecast");
+const futureWeather = $("#weather-forecast");
 const prevEl = $(".prevsearch-box");
 const cityEl = $("#city");
 const dateEl = $("#date");
 const currentWeather = $("#current-weather-items");
-const futureWeather = $("#weather-forecast");
 const cityArr = [];
-const currentDate = moment().format("DD/MM/YYYY");
+const currentDate = moment().format("DD MMMM YY");
 
 const API_KEY = "d7ddb6b485324f8476383582a2ea3896";
 
@@ -18,6 +19,7 @@ $(document).ready(function () {
     for (var i = 0; i < pastInput.length; i++) {
       var liEl = $("<li class='li-el-results'>" + pastInput[i] + "</li>");
       prevEl.append(liEl);
+      prevEl.addClass("list-unstyled");
       prevContainer.removeClass("d-none");
     };
   };
@@ -101,11 +103,11 @@ function displayWeather(weather, location) {
   imgEl.attr("src", iconUrl);
 
   h2El = $("<h2 class='header-result'>" + location + " " + currentDate + "</h2>");
-  currentWeather.append(h1El);
+  currentWeather.append(h2El);
   h2El.append(imgEl);
 
   let temp = weather.main.temp;
-  let wind = weather.main.wind;
+  let wind = weather.wind.speed;
   let humidity = weather.main.humidity;
 
   currentWeather.append("<p class='temp-today'>Temp: " + temp + "°C</p>")
@@ -148,22 +150,22 @@ function displayWeather(weather, location) {
     currentWeather.append(uvEl);
 
     if (uv < 2) {
-      uvSpan.addClass("green");
+      uvSpan.addClass("uv-badge green");
       uvSpan.append(" (Low UV)");
     } else if (uv < 5) {
-      uvSpan.addClass("yellow");
+      uvSpan.addClass("uv-badge yellow");
       uvSpan.append(" (Moderate UV)");
 
     } else if (uv < 7) {
-      uvSpan.addClass("orange");
+      uvSpan.addClass("uv-badge orange");
       uvSpan.append(" (High UV)");
 
     } else if (uv < 10) {
-      uvSpan.addClass("red");
+      uvSpan.addClass("uv-badge red");
       uvSpan.append(" (Very High UV)");
 
     } else if (uv > 10) {
-      uvSpan.addClass("dark-red");
+      uvSpan.addClass("uv-badge dark-red");
       uvSpan.append(" (Extreme UV)");
     }
   };
@@ -172,13 +174,14 @@ function displayWeather(weather, location) {
 function displayCards(weather, location) {
   let day = [0, 8, 16, 24, 32];
 
+  futureContainer.removeClass("d-none");
   futureWeather.append("<section class='weather-forecast-item'></section>")
   day.forEach(function (i) {
     let createP = $("<p>")
-    createP.addClass("date");
+    createP.addClass("date p-1");
     futureWeather.append(createP);
 
-    let date = moment(weather.list[i].dt_txt).format("DD/MM/YYYY");
+    let date = moment(weather.list[i].dt_txt).format("DD/MM/YY");
 
     let futureTemp = weather.list[i].main.temp;
     let futureWind = weather.list[i].wind.speed;
@@ -186,9 +189,9 @@ function displayCards(weather, location) {
 
     createP.append("<h2 class='header-result'>" + date + "</h2>");
     createP.append("<img src='http://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>");
-    createP.append("<p class='temp'>Temp: " + futureTemp + " °C</p>");
-    createP.append("<p class='wind'>Wind Speed: " + futureWind + " MPH</p>");
-    createP.append("<p class='humidity'>Humidity: " + futureHumidity + " %</p>");
+    createP.append("<p class='temp font-weight-bold'>Temp: " + futureTemp + " °C</p>");
+    createP.append("<p class='wind font-weight-bold'>Wind Speed: " + futureWind + " MPH</p>");
+    createP.append("<p class='humidity font-weight-bold'>Humidity: " + futureHumidity + " %</p>");
     futureWeather.removeClass("d-none");
 
   })
@@ -209,5 +212,5 @@ function handleList(event) {
   };
 };
 
-prevEl.on("click", $(".li-el-results"), handeList);
+prevEl.on("click", $(".li-el-results"), handleList);
 submitBtn.on("click", inputHandler);
