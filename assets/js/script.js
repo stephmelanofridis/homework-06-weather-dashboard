@@ -41,7 +41,7 @@ function inputHandler(event) {
 };
 
 function getWeather(location) {
-  let apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY;
+  let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY;
   let forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&units=metric&appid=" + API_KEY;
 
   fetch(apiUrl)
@@ -99,7 +99,7 @@ function displayWeather(weather, location) {
   let icon = weather.weather[0].icon;
   console.log(icon);
 
-  let iconUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+  let iconUrl = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
   imgEl.attr("src", iconUrl);
   imgEl.addClass("icon m-2")
 
