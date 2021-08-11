@@ -101,6 +101,7 @@ function displayWeather(weather, location) {
 
   let iconUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
   imgEl.attr("src", iconUrl);
+  imgEl.addClass("icon m-2")
 
   h2El = $("<h2 class='header-result'>" + location + " " + currentDate + "</h2>");
   currentWeather.append(h2El);
@@ -177,8 +178,8 @@ function displayCards(weather, location) {
   futureContainer.removeClass("d-none");
   futureWeather.append("<section class='weather-forecast-item'></section>")
   day.forEach(function (i) {
-    let createP = $("<p>")
-    createP.addClass("date p-1");
+    let createP = $("<p class='background'>")
+    createP.addClass("date border rounded border-white m-1 p-2 text-center");
     futureWeather.append(createP);
 
     let date = moment(weather.list[i].dt_txt).format("DD/MM/YY");
@@ -188,7 +189,7 @@ function displayCards(weather, location) {
     let futureHumidity = weather.list[i].main.humidity;
 
     createP.append("<h2 class='header-result'>" + date + "</h2>");
-    createP.append("<img src='http://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>");
+    createP.append("<img class='icon' src='http://openweathermap.org/img/wn/" + weather.list[i].weather[0].icon + "@2x.png'</img>");
     createP.append("<p class='temp font-weight-bold'>Temp: " + futureTemp + " °C</p>");
     createP.append("<p class='wind font-weight-bold'>Wind Speed: " + futureWind + " MPH</p>");
     createP.append("<p class='humidity font-weight-bold'>Humidity: " + futureHumidity + " %</p>");

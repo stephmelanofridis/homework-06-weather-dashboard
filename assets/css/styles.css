@@ -111,12 +111,15 @@ h1 {
 
 .future-forecast {
     color: var(--white);
-    background: rgba(24, 24, 27, 0.8);
     padding: 25px;
     position: absolute;
     top: 500px;
     right: 150px;
     border-radius: 10px;
+}
+
+.background {
+    background: rgba(24, 24, 27, 0.8);
 }
 
 .future-forecast .weather-forecast {
@@ -175,4 +178,9 @@ h1 {
 
 .dark-red {
     background-color: #8d0000;
+}
+
+.icon {
+    background-color:black;
+    border-radius: 10px;
 }
